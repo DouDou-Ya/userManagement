@@ -1,14 +1,38 @@
 <template>
   <div id="app">
-    <router-view/>
+    <el-container>
+      <!-- <el-header>
+        <Header ></Header>
+      </el-header> -->
+      <el-main>
+        <router-view/>
+      </el-main>
+      <!-- <el-footer>
+        <Footer></Footer>
+      </el-footer> -->
+    </el-container>
   </div>
 </template>
 
 <script>
+import './assets/css/style.css'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+
 export default {
-  name: 'App'
+  components: { Header, Footer },
+  name: 'App',
+  data () {
+    return {
+      // usertoken : false
+    }
+  }
 }
 </script>
-
-<style >
+<style>
+.el-header,
+.el-main,
+.el-footer {
+  padding: 0;
+}
 </style>
