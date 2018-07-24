@@ -39,7 +39,7 @@ export default {
     };
     var validatePass = (rule, value, callback) => {
       if (value === '') {
-        callback(new Error('请输入密码'));
+        callback(new Error('请输入验证码'));
       } else {
         if (this.ruleForm2.checkPass !== '') {
           this.$refs.ruleForm2.validateField('checkPass');
