@@ -4,10 +4,17 @@ body,
   padding: 0;
 }
 
+.content {
+  min-width: 1000px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 .btn_block {
   width: 100%;
 }
-.text_center{
+
+.text_center {
   text-align: center;
 }
 

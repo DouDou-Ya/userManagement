@@ -1,5 +1,5 @@
 <template>
-  <div class="loginbg">
+  <div class="loginbg" style="margin-top:-60px;">
     <div class="login_box">
       <div class="text_center" style="margin-bottom:30px;">
         <img src="../assets/images/logo.png" alt="" width="100">

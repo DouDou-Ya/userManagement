@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <el-container>
-      <!-- <el-header>
+      <el-header>
         <Header ></Header>
-      </el-header> -->
+      </el-header>
       <el-main>
         <router-view/>
       </el-main>
@@ -33,5 +33,8 @@ export default {
 .el-main,
 .el-footer {
   padding: 0;
+}
+.el-header{
+  background-color: #545c64;
 }
 </style>

@@ -1,5 +1,5 @@
 {
-  "name": "Users",
+  "name": "jsonserver",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "zlt <2051613600@qq.com>",
@@ -8,11 +8,14 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "json:server": "json-server --watch db.json"
   },
   "dependencies": {
     "element-ui": "^2.4.4",
+    "json-server": "^0.14.0",
     "vue": "^2.5.2",
+    "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
@@ -72,5 +75,15 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sungril/userManagement.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sungril/userManagement/issues"
+  },
+  "homepage": "https://github.com/sungril/userManagement#readme"
 }
