@@ -3,18 +3,29 @@ body,
   margin: 0;
   padding: 0;
 }
- .btn_block{
-   width: 100%;
- }
+
+.btn_block {
+  width: 100%;
+}
+.text_center{
+  text-align: center;
+}
+
 .loginbg {
   height: 100vh;
   background: url(../images/loginbg1.jpg) no-repeat center;
-  background-size:100% auto ;
+  background-size: 100% auto;
   overflow: hidden;
+  display: -webkit-flex;
+  /*设置父元素盒子的，这样内部盒子就会水平居中，上下居中。*/
+  -webkit-justify-content: center;
+  /*设置父元素盒子的，这样内部盒子就会水平居中，上下居中。*/
+  -webkit-align-items: center;
+  /*设置父元素盒子的，这样内部盒子就会水平居中，上下居中。*/
 }
-.login_box{
-  margin: 50px auto;
+
+.login_box {
   width: 400px;
   background: #fff;
-  padding: 40px 50px;
+  padding: 60px 50px 40px;
 }

@@ -1,90 +1,57 @@
 <template>
   <div class="loginbg">
     <div class="login_box">
-      <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" class="demo-ruleForm">
-        <el-form-item label="" prop="pass">
-          <el-input type="password" v-model="ruleForm2.pass" placeholder="请输入手机号" prefix-icon="el-icon-mobile-phone" auto-complete="off"></el-input>
+      <div class="text_center" style="margin-bottom:30px;">
+        <img src="../assets/images/logo.png" alt="" width="100">
+      </div>
+      <el-form :model="loginForm" status-icon :rules="rules" ref="loginForm">
+        <el-form-item prop="mobile">
+          <el-input v-model="loginForm.mobile" placeholder="请输入手机号" prefix-icon="el-icon-mobile-phone"></el-input>
         </el-form-item>
-        <el-form-item label="" prop="checkPass">
-          <el-input type="password" v-model="ruleForm2.checkPass" placeholder="请输入验证码" prefix-icon="el-icon-goods" auto-complete="off"></el-input>
-        </el-form-item>
-        <el-form-item label="" prop="age">
-          <el-input v-model.number="ruleForm2.age" placeholder="请输入内容" prefix-icon="el-icon-search"></el-input>
+        <el-form-item prop="verificationCode">
+          <el-input v-model="loginForm.verificationCode" placeholder="请输入验证码" prefix-icon="el-icon-goods" >
+            <el-button slot="append">获取验证码</el-button>
+          </el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" class="btn_block" @click="Goto('/index')" round>登录</el-button>
+          <el-button type="primary" class="btn_block" @click="submitForm('loginForm')" round>登&nbsp;&nbsp;&nbsp;录</el-button>
         </el-form-item>
       </el-form>
+      <p style="font-size:0.8rem; color:#909399; text-align:center;">别看了，这里没有注册！不想填信息？<el-button type="text" @click="Goto('/index')">直接点这里</el-button></p>
     </div>
   </div>
 </template>
 <script>
 export default {
   data () {
-    var checkAge = (rule, value, callback) => {
-      if (!value) {
-        return callback(new Error('年龄不能为空'));
-      }
-      setTimeout(() => {
-        if (!Number.isInteger(value)) {
-          callback(new Error('请输入数字值'));
-        } else {
-          if (value < 18) {
-            callback(new Error('必须年满18岁'));
-          } else {
-            callback();
-          }
-        }
-      }, 1000);
-    };
-    var validatePass = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('请输入验证码'));
-      } else {
-        if (this.ruleForm2.checkPass !== '') {
-          this.$refs.ruleForm2.validateField('checkPass');
-        }
-        callback();
-      }
-    };
-    var validatePass2 = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('请再次输入密码'));
-      } else if (value !== this.ruleForm2.pass) {
-        callback(new Error('两次输入密码不一致!'));
-      } else {
-        callback();
-      }
-    };
     return {
-      ruleForm2: {
-        pass: '',
-        checkPass: '',
-        age: ''
+      loginForm: {
+        mobile: '',
+        verificationCode: ''
       },
-      rules2: {
-        pass: [
-          { validator: validatePass, trigger: 'blur' }
+      rules: {
+        mobile: [
+          { required: true, message: '请输入电话号码', trigger: 'blur' },
+          { min: 11, max: 11, message: '请输入有效的电话号码', trigger: 'blur' }
         ],
-        checkPass: [
-          { validator: validatePass2, trigger: 'blur' }
-        ],
-        age: [
-          { validator: checkAge, trigger: 'blur' }
+        verificationCode: [
+          { required: true, message: '请输入验证码', trigger: 'blur' },
+          { min: 6, max: 6, message: '验证码为6位数字', trigger: 'blur' }
         ]
       }
-    };
+    }
   },
   methods: {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!');
+          this.$router.push({ path: '/index' })
+          console.log('ok')
         } else {
-          console.log('error submit!!');
-          return false;
+          console.log('error submit!!')
+          return false
         }
-      });
+      })
     },
     Goto (gopath) {
       this.$router.push({ path: gopath })
