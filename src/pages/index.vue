@@ -20,30 +20,38 @@ export default {
   name: 'index',
   data () {
     return {
-      customers: [{
-        'name': '王小虎',
-        'mobile': '132456',
-        'email': '123456',
-        'id': '1',
-        'companyId': '1'
-      }]
+      customers: [
+        {
+          'name': '王小虎',
+          'mobile': '132456',
+          'email': '123456',
+          'id': '1',
+          'companyId': '1'
+        },
+        {
+          'name': '王小虎',
+          'mobile': '132456',
+          'email': '123456',
+          'id': '1',
+          'companyId': '1'
+        }
+      ]
     }
   },
   methods: {
     Goto (gopath) {
       this.$router.push({ path: gopath })
     },
-    created () {
-      console.log(456)
-      this.fetchCustomers()
-    },
     fetchCustomers () {
-      console.log(123)
       this.$http.get('http://localhost:3000/users')
         .then(function (response) {
           console.log(response)
           this.customers = response.body
         })
+    },
+    created () {
+      console.log(456)
+      this.fetchCustomers()
     }
   }
 }
