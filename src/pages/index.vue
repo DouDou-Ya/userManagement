@@ -6,7 +6,7 @@
     <el-table :data="customers" style="width: 100%">
       <el-table-column prop="name" label="姓名">
       </el-table-column>
-      <el-table-column prop="mobile" label="电话">
+      <el-table-column prop="phone" label="电话">
       </el-table-column>
       <el-table-column prop="email" label="邮箱">
       </el-table-column>
@@ -20,22 +20,7 @@ export default {
   name: 'index',
   data () {
     return {
-      customers: [
-        {
-          'name': '王小虎',
-          'mobile': '132456',
-          'email': '123456',
-          'id': '1',
-          'companyId': '1'
-        },
-        {
-          'name': '王小虎',
-          'mobile': '132456',
-          'email': '123456',
-          'id': '1',
-          'companyId': '1'
-        }
-      ]
+      customers: []
     }
   },
   methods: {
@@ -43,16 +28,14 @@ export default {
       this.$router.push({ path: gopath })
     },
     fetchCustomers () {
-      this.$http.get('http://localhost:3000/users')
+      this.$http.get('http://localhost:3000/user')
         .then(function (response) {
-          console.log(response)
           this.customers = response.body
         })
-    },
-    created () {
-      console.log(456)
-      this.fetchCustomers()
     }
+  },
+  created () {
+    this.fetchCustomers()
   }
 }
 </script>
