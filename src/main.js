@@ -3,8 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
+import axios from 'axios'
 import ElementUI from 'element-ui'
-import VueResource from 'vue-resource'
+// import VueResource from 'vue-resource'
 import 'element-ui/lib/theme-chalk/index.css'
 // import router from './router'
 // import store from './store'
@@ -12,7 +13,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueRouter)
-Vue.use(VueResource)
+// Vue.use(VueResource)
+
+Vue.prototype.$http = axios
 
 // 设置路由
 const router = new VueRouter({
@@ -38,6 +41,11 @@ const router = new VueRouter({
       path: '/Add',
       name: 'Add',
       component: () => import('@/pages/Add')
+    },
+    {
+      path: '/Details',
+      name: 'Details',
+      component: () => import('@/pages/Details')
     }
   ]
 })
