@@ -1,14 +1,24 @@
 {
   "user": [
     {
-      "name": "分公司答复不是",
+      "name": "姓名1",
       "sex": "男",
       "phone": "11111111111",
       "email": "567bhjghj@qq.com",
       "birthday": "2018-09-18T16:00:00.000Z",
-      "position": "的出发点",
+      "position": "IT",
       "habit": "",
       "id": 1
+    },
+    {
+      "name": "姓名2",
+      "sex": "女",
+      "phone": "18145678978",
+      "email": "",
+      "birthday": "",
+      "position": "人力资源",
+      "habit": "",
+      "id": 2
     }
   ],
   "companies": [

@@ -6,10 +6,10 @@
     <P>姓名：{{customer.name}}</P>
     <P>性别：{{customer.sex}}</P>
     <P>电话：{{customer.phone}}</P>
-    <P>生日：{{customer.birthday}}</P>
-    <P>邮箱：{{customer.email}}</P>
+    <P>生日：<span v-if="!customer.birthday">未填写</span><span v-else>{{customer.birthday}}</span></P>
+    <P>邮箱：<span v-if="!customer.email">未填写</span><span v-else>{{customer.email}}</span></P>
     <P>部门职位：{{customer.position}}</P>
-    <P>习惯爱好：{{customer.habit}}</P>
+    <P>习惯爱好：<span v-if="!customer.habit">未填写</span><span v-else>{{customer.habit}}</span></P>
     <el-button size="mini" type="primary" @click="Goto('/index')">确定</el-button>
     <el-button size="mini" @click="editor(customer.id)">编辑</el-button>
     <el-button size="mini" @click="deletecustomer(customer.id)">删除</el-button>
