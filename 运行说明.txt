@@ -1,5 +1,5 @@
-×¼±¸node¡¢npm
-1.³õÊ¼»¯--npm install
-2.°²×°json·şÎñ--npm install -g json-server
-2.Æô¶¯±¾µØjsonÊı¾İ´ÓÎÄ¼ş--npm run json:server
-3.ÔËĞĞÏîÄ¿--npm run dev
+å‡†å¤‡nodeã€npm
+1.åˆå§‹åŒ–--npm install
+2.å®‰è£…jsonæœåŠ¡--npm install -g json-server
+2.å¯åŠ¨æœ¬åœ°jsonæ•°æ®æ–‡ä»¶--npm run json:server
+3.è¿è¡Œé¡¹ç›®--npm run dev
