@@ -1,0 +1,5 @@
+准备node、npm
+1.初始化--npm install
+2.安装json服务--npm install -g json-server
+2.启动本地json数据从文件--npm run json:server
+3.运行项目--npm run dev
